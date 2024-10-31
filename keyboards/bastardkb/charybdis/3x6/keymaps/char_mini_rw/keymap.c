@@ -1,3 +1,5 @@
+//
+
 /**
  * Copyright 2022 Charly Delay <charly@codesink.dev> (@0xcharly)
  *
@@ -66,9 +68,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮   ╭──────────────────────────────────────────────────────╮
        KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
   // ├──────────────────────────────────────────────────────┤   ├──────────────────────────────────────────────────────┤
-MT(MOD_LCTL,KC_BSPC), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ, RALT_KK, RCTL_KL,  RS_SCLN, KC_QUOT,
+MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ, RALT_KK, RCTL_KL,  RS_SCLN, KC_QUOT,
   // ├──────────────────────────────────────────────────────┤   ├──────────────────────────────────────────────────────┤
-       KC_LSFT,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, KC_RSFT,
+       KC_LSFT,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, MT(KC_LSFT,KC_CAPS),
   // ╰──────────────────────────────────────────────────────┤   ├──────────────────────────────────────────────────────╯
                                   KC_BSPC,  KC_SPC,   LOWER,      RAISE,  KC_ENT
   //                            ╰───────────────────────────╯   ╰──────────────────╯
