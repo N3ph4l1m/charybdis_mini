@@ -23,6 +23,7 @@ enum charybdis_keymap_layers {
     LAYER_LOWER,
     LAYER_RAISE,
     LAYER_POINTER,
+    LAYER_FUNCTION,
 };
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
@@ -41,6 +42,7 @@ static uint16_t auto_pointer_layer_timer = 0;
 
 #define LOWER MO(LAYER_LOWER)
 #define RAISE MO(LAYER_RAISE)
+#define FUNCTION MO(LAYER_FUNCTION)
 #define PT_Z LT(LAYER_POINTER, KC_Z)
 #define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
 #define LSFT_KA LSFT_T(KC_A)
@@ -72,20 +74,20 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
   // ├──────────────────────────────────────────────────────┤   ├──────────────────────────────────────────────────────┤
        KC_LSFT,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, MT(KC_LSFT,KC_CAPS),
   // ╰──────────────────────────────────────────────────────┤   ├──────────────────────────────────────────────────────╯
-                                  KC_BSPC,  KC_SPC,   LOWER,      RAISE,  KC_ENT
+                             MT(FUNCTION, KC_BSPC), KC_SPC,       LOWER, RAISE,  KC_ENT
   //                            ╰───────────────────────────╯   ╰──────────────────╯
   ),
 
   [LAYER_LOWER] = LAYOUT(
-  // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       KC_GRV, RGB_TOG, KC_MNXT, KC_MPLY, KC_MPRV, XXXXXXX,    KC_LBRC,    KC_7,    KC_8,    KC_9, KC_0   , KC_RBRC,
-  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-    S(KC_MINS), KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,    KC_PPLS,    KC_4,    KC_5,    KC_6, KC_PMNS, XXXXXXX,
-  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_NUHS, XXXXXXX,  KC_PAST,    KC_1,    KC_2,    KC_3, KC_PSLS, XXXXXXX,
-  // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                  XXXXXXX, XXXXXXX, _______,    XXXXXXX, _______
-  //                            ╰───────────────────────────╯ ╰──────────────────╯
+  // ╭──────────────────────────────────────────────────────╮  ╭──────────────────────────────────────────────────────╮
+       KC_GRV, RGB_TOG, KC_MNXT, KC_TILD, KC_LPRN , KC_RPRN ,     KC_LBRC,    KC_7,    KC_8,  KC_9, KC_0 , KC_RBRC,
+  // ├──────────────────────────────────────────────────────┤  ├──────────────────────────────────────────────────────┤
+    S(KC_MINS), KC_LGUI, KC_LALT, KC_NUBS, KC_LCBR, KC_RCBR ,   KC_PPLS,    KC_4,    KC_5,    KC_6, KC_PMNS, KC_PENT,
+  // ├──────────────────────────────────────────────────────┤  ├──────────────────────────────────────────────────────┤
+       XXXXXXX, XXXXXXX, XXXXXXX, KC_NUHS, KC_LBRC, KC_RBRC,   KC_PAST,    KC_1,    KC_2,    KC_3, KC_PSLS , KC_EQL ,
+  // ╰──────────────────────────────────────────────────────┤  ├──────────────────────────────────────────────────────╯
+                                  XXXXXXX, XXXXXXX, _______,     XXXXXXX, _______
+  //                            ╰───────────────────────────╯  ╰──────────────────╯
   ),
 
   [LAYER_RAISE] = LAYOUT(
@@ -109,6 +111,18 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
        XXXXXXX, _______, DRGSCRL, SNIPING, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, SNIPING, DRGSCRL, _______, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   KC_BTN2, KC_BTN1, KC_BTN3,    KC_BTN3, KC_BTN1
+  //                            ╰───────────────────────────╯ ╰──────────────────╯
+  ),
+
+  [LAYER_FUNCTION] = LAYOUT(
+  // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
+       QK_BOOT,  EE_CLR, XXXXXXX, XXXXXXX, DPI_MOD, S_D_MOD,    KC_F1 ,  KC_F2  , KC_F3  , KC_F4  , KC_F5   , KC_F6 ,
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+       XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX,    KC_F7 ,  KC_F8  , KC_F9  , KC_F10  , KC_F11 , KC_F12 ,
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
+       XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_F7 ,  KC_F8  , KC_F9  , KC_F10  , KC_F11 , KC_F11 ,
+  // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
+                                  _______, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 };
