@@ -18,10 +18,10 @@
 
 enum charybdis_keymap_layers {
     LAYER_BASE = 0,
-    LAYER_LOWER,
-    LAYER_RAISE,
-    LAYER_POINTER,
-    LAYER_FUNC,
+    LAYER_LOWER = 1,
+    LAYER_RAISE = 2,
+    LAYER_POINTER = 3,
+    LAYER_FUNC = 4,
 };
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
@@ -122,7 +122,7 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   KC_BTN2, KC_BTN1, KC_BTN3,    KC_BTN3, KC_BTN1
   //                            ╰───────────────────────────╯ ╰──────────────────╯
-  )
+  ),
 };
 // clang-format on
 
