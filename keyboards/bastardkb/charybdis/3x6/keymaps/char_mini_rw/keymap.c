@@ -21,6 +21,7 @@ enum charybdis_keymap_layers {
     LAYER_LOWER,
     LAYER_RAISE,
     LAYER_POINTER,
+    LAYER_FUNC,
 };
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
@@ -41,6 +42,7 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define RAISE MO(LAYER_RAISE)
 #define PT_Z LT(LAYER_POINTER, KC_Z)
 #define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
+#define FUNC LT(LAYER_FUNC, KC_BSPC)
 #define LSFT_KA LSFT_T(KC_A)
 #define LCTL_KS LCTL_T(KC_S)
 #define LGUI_KD LGUI_T(KC_D)
