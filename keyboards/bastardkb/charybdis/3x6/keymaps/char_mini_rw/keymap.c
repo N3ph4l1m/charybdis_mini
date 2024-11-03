@@ -16,7 +16,7 @@
  */
 #include QMK_KEYBOARD_H
 
-#define LAYER_BASE = 0
+#define LAYER_BASE  0
 #define LAYER_LOWER
 #define LAYER_RAISE
 #define LAYER_FUNC
