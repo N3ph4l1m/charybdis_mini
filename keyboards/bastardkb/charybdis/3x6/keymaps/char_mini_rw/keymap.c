@@ -16,13 +16,11 @@
  */
 #include QMK_KEYBOARD_H
 
-enum charybdis_keymap_layers {
-    LAYER_BASE = 0,
-    LAYER_LOWER,
-    LAYER_RAISE,
-    LAYER_FUNC,
-    LAYER_POINTER,
-};
+#define LAYER_BASE = 0
+#define LAYER_LOWER
+#define LAYER_RAISE
+#define LAYER_FUNC
+#define LAYER_POINTER
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
 #define CHARYBDIS_AUTO_SNIPING_ON_LAYER LAYER_POINTER
