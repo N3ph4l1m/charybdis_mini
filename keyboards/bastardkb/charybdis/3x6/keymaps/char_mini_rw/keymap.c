@@ -43,6 +43,7 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define PT_Z LT(LAYER_POINTER, KC_Z)
 #define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
 #define FUNC LT(LAYER_FUNC, KC_BSPC)
+#define LTAB LT(RAISE,KC_TAB)
 #define LSFT_KA LSFT_T(KC_A)
 #define LCTL_KS LCTL_T(KC_S)
 #define LGUI_KD LGUI_T(KC_D)
@@ -72,7 +73,7 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
   // ├──────────────────────────────────────────────────────┤   ├──────────────────────────────────────────────────────┤
        KC_LSFT,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, MT(KC_LSFT,KC_CAPS),
   // ╰──────────────────────────────────────────────────────┤   ├──────────────────────────────────────────────────────╯
-                                   FUNC  ,  KC_SPC,   LOWER,      RAISE,  KC_ENT
+                                   FUNC  ,  KC_SPC,   LOWER,      LTAB ,  KC_ENT
   //                            ╰───────────────────────────╯   ╰──────────────────╯
   ),
 
@@ -80,9 +81,9 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        KC_GRV,  XXXXXXX, KC_MNXT, KC_MPLY, KC_MPRV, XXXXXXX,    KC_LBRC,    KC_7,    KC_8,    KC_9, KC_0   , KC_RBRC,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-    S(KC_MINS), KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,    KC_PPLS,    KC_4,    KC_5,    KC_6, KC_PMNS, KC_EQL,
+       XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,    KC_PPLS,    KC_4,    KC_5,    KC_6, KC_PMNS, KC_EQL,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_NUHS, XXXXXXX,    KC_PAST,    KC_1,    KC_2,    KC_3, KC_PSLS,  XXXXXXX,
+       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_NUHS, XXXXXXX,    KC_PAST,    KC_1,    KC_2,    KC_3, KC_PSLS,S(KC_MINS),
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   XXXXXXX, XXXXXXX, _______,    XXXXXXX, _______
   //                            ╰───────────────────────────╯ ╰──────────────────╯
@@ -92,9 +93,9 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        XXXXXXX, XXXXXXX, XXXXXXX,S(KC_NUBS), KC_LPRN, KC_RPRN,    KC_HOME, KC_PGUP, KC_PGDN, KC_END , XXXXXXX,KC_DEL,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-      XXXXXXX, XXXXXXX,  XXXXXXX,S(KC_NUHS), KC_LCBR, KC_RCBR,  KC_LEFT,   KC_UP, KC_DOWN, KC_RGHT, XXXXXXX,  XXXXXXX,
+      S(KC_MINS), XXXXXXX,  XXXXXXX,S(KC_NUHS), KC_LCBR, KC_RCBR,  KC_LEFT,   KC_UP, KC_DOWN, KC_RGHT, XXXXXXX,  XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, XXXXXXX, KC_NUBS, KC_NUHS, KC_LBRC, KC_RBRC,    XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+       XXXXXXX, KC_NUBS, XXXXXXX, KC_NUHS, KC_LBRC, KC_RBRC,    XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   _______, _______, XXXXXXX,    _______, XXXXXXX
   //                            ╰───────────────────────────╯ ╰──────────────────╯
