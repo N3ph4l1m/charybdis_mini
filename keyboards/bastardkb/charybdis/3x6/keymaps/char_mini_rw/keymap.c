@@ -92,7 +92,7 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        XXXXXXX, XXXXXXX, XXXXXXX,S(KC_NUBS), KC_LPRN, KC_RPRN,    KC_HOME, KC_PGUP, KC_PGDN, KC_END , XXXXXXX,KC_DEL,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-      XXXXXXX, XXXXXXX,  XXXXXXX,S(KC_NUHS), KC_LCBR, KC_RCBR,  KC_LEFT,   KC_UP, KC_DOWN, KC_RGHT, XXXXXXX,  XXXXXXX,
+      XXXXXXX, XXXXXXX,  XXXXXXX,S(KC_NUHS), KC_LCBR, KC_RCBR,  KC_LEFT,   KC_DOWN, KC_UP, KC_RGHT, XXXXXXX,  XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX, KC_NUBS, KC_NUHS, KC_LBRC, KC_RBRC,    XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
