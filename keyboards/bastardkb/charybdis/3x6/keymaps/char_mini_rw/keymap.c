@@ -34,7 +34,7 @@ enum {
 // Tap dance definitions
 tap_dance_action_t tap_dance_actions[] = {
     [TD_PAREN] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN),
-    [TD_CBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LPBR, KC_RCBR),
+    [TD_CBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
     [TD_SBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LBCR, KC_RBCR),
 };
 
@@ -109,7 +109,7 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
   // ├─────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
     S(KC_MINS), UK_PND,UK_PERC,S(KC_NUHS), XXXXXXX,TD(TD_CBRKT),  KC_LEFT,   KC_DOWN, KC_UP, KC_RGHT, XXXXXXX,  XXXXXXX,
   // ├─────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-      XXXXXXX, KC_NUBS, S(KC_NUBS), KC_NUHS, ,TD(TD_SBRKT), XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, KC_NUBS, S(KC_NUBS), KC_NUHS,XXXXXXX,TD(TD_SBRKT), XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ╰─────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   _______, _______, XXXXXXX,       _______, XXXXXXX
   //                            ╰──────────────────────────────╯ ╰──────────────────╯
