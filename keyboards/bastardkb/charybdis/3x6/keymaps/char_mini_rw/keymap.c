@@ -25,6 +25,15 @@ enum charybdis_keymap_layers {
     LAYER_FUNC,
 };
 
+enum {
+    TD_PAREN,
+};
+
+// Tap dance definitions
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_PAREN] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN),
+};
+
 /** \brief Automatically enable sniping-mode on the pointer layer. */
 #define CHARYBDIS_AUTO_SNIPING_ON_LAYER LAYER_POINTER
 #ifdef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
@@ -44,7 +53,7 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define PT_Z LT(LAYER_POINTER, KC_Z)
 #define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
 #define FUNC LT(LAYER_FUNC, KC_BSPC)
-#define LTAB LT(RAISE,KC_TAB)
+#define LTAB LT(RAISE, KC_TAB)
 #define LSFT_KA LSFT_T(KC_A)
 #define LCTL_KS LCTL_T(KC_S)
 #define LGUI_KD LGUI_T(KC_D)
@@ -92,7 +101,7 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
 
   [LAYER_RAISE] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       KC_GRV, UK_EURO, KC_DLR ,KC_PAST, KC_LPRN, KC_RPRN,    KC_HOME, KC_PGUP, KC_PGDN, KC_END , XXXXXXX,KC_DEL,
+       KC_GRV, UK_EURO, KC_DLR ,KC_PAST, KC_LPRN, , TD_PAREN    KC_HOME, KC_PGUP, KC_PGDN, KC_END , XXXXXXX,KC_DEL,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
     S(KC_MINS), UK_PND,UK_PERC,S(KC_NUHS), KC_LCBR, KC_RCBR,  KC_LEFT,   KC_DOWN, KC_UP, KC_RGHT, XXXXXXX,  XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
@@ -155,7 +164,7 @@ void matrix_scan_user(void) {
 }
 #    endif // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 
-#ifdef CHARYBDIS_AUTO_SNIPING_ON_LAYER
+#    ifdef CHARYBDIS_AUTO_SNIPING_ON_LAYER
 layer_state_t layer_state_set_user(layer_state_t state) {
     charybdis_set_pointer_sniping_enabled(layer_state_cmp(state, CHARYBDIS_AUTO_SNIPING_ON_LAYER));
     return state;
