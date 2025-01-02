@@ -27,7 +27,7 @@ enum charybdis_keymap_layers {
 
 enum {
     TD_PAREN,
-    TD_CBRKT,
+    //    TD_CBRKT,
     TD_SBRKT,
 };
 
