@@ -27,14 +27,14 @@ enum charybdis_keymap_layers {
 
 enum {
     TD_PAREN,
-    //    TD_CBRKT,
+    TD_CBRKT,
     TD_SBRKT,
 };
 
 // Tap dance definitions
 tap_dance_action_t tap_dance_actions[] = {
     [TD_PAREN] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN),
-    //    [TD_CBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
+    [TD_CBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
     [TD_SBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
 };
 
@@ -107,7 +107,7 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
   // ╭────────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        KC_GRV, UK_EURO, KC_DLR ,KC_PAST,S(KC_6) ,TD(TD_PAREN),    KC_HOME, KC_PGUP, KC_PGDN, KC_END , XXXXXXX,KC_DEL,
   // ├─────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-    S(KC_MINS), UK_PND,UK_PERC,S(KC_NUHS), XXXXXXX, XXXXXXX,      KC_LEFT,   KC_DOWN, KC_UP, KC_RGHT, XXXXXXX,  XXXXXXX,
+    S(KC_MINS), UK_PND,UK_PERC,S(KC_NUHS), XXXXXXX, TD(TD_CBRKT),      KC_LEFT,   KC_DOWN, KC_UP, KC_RGHT, XXXXXXX,  XXXXXXX,
   // ├─────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
       XXXXXXX, KC_NUBS, S(KC_NUBS), KC_NUHS,XXXXXXX,TD(TD_SBRKT), XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ╰─────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
