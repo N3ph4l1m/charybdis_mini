@@ -35,7 +35,7 @@ enum {
 tap_dance_action_t tap_dance_actions[] = {
     [TD_PAREN] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN),
     //    [TD_CBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
-    [TD_SBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_L, KC_K),
+    [TD_SBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
 };
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
