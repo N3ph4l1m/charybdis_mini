@@ -104,16 +104,17 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
   ),
 
   [LAYER_RAISE] = LAYOUT(
+
   // ╭────────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        KC_GRV, UK_EURO, KC_DLR ,KC_PAST,S(KC_6) ,TD(TD_PAREN),    KC_HOME, KC_PGUP, KC_PGDN, KC_END , XXXXXXX,KC_DEL,
   // ├─────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-    S(KC_MINS), UK_PND,UK_PERC,S(KC_NUHS), XXXXXXX, TD(TD_CBRKT),      KC_LEFT,   KC_DOWN, KC_UP, KC_RGHT, XXXXXXX,  XXXXXXX,
+    S(KC_MINS), UK_PND,UK_PERC,S(KC_NUHS), XXXXXXX, TD(TD_CBRKT),  KC_LEFT,   KC_DOWN, KC_UP, KC_RGHT, XXXXXXX,  XXXXXXX,
   // ├─────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
       XXXXXXX, KC_NUBS, S(KC_NUBS), KC_NUHS,XXXXXXX,TD(TD_SBRKT), XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ╰─────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   _______, _______, XXXXXXX,       _______, XXXXXXX
   //                            ╰──────────────────────────────╯ ╰──────────────────╯
-  ),
+
 
   [LAYER_POINTER] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
