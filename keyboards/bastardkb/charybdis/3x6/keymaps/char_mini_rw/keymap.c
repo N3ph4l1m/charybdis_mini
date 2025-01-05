@@ -30,15 +30,13 @@ enum {
     TD_CBRKT,
     TD_SBRKT,
     TD_DAUND,
+    TD_SPCUN,
 
 };
 
 // Tap dance definitions
 tap_dance_action_t tap_dance_actions[] = {
-    [TD_PAREN] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN),
-    [TD_CBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
-    [TD_SBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
-    [TD_DAUND] = ACTION_TAP_DANCE_DOUBLE(KC_UNDS, KC_PMNS),
+    [TD_PAREN] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN), [TD_CBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR), [TD_SBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC), [TD_DAUND] = ACTION_TAP_DANCE_DOUBLE(KC_UNDS, KC_PMNS), [TD_SPCUN] = ACTION_TAP_DANCE_DOUBLE(KC_SPC, KC_UNDS),
 };
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
@@ -90,7 +88,7 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
   // ├──────────────────────────────────────────────────────┤   ├──────────────────────────────────────────────────────┤
        KC_LSFT,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, MT(KC_LSFT,KC_CAPS),
   // ╰──────────────────────────────────────────────────────┤   ├──────────────────────────────────────────────────────╯
-                                   FUNC  ,  KC_SPC,   LOWER,      LTAB ,  KC_ENT
+                                   FUNC  ,TD_SPCUN,   LOWER,      LTAB ,  KC_ENT
   //                            ╰───────────────────────────╯   ╰──────────────────╯
   ),
 
