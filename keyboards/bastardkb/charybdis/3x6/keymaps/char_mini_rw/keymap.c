@@ -92,7 +92,7 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
   // ├──────────────────────────────────────────────────────┤   ├──────────────────────────────────────────────────────┤
        KC_LSFT,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, MT(KC_LSFT,KC_CAPS),
   // ╰──────────────────────────────────────────────────────┤   ├──────────────────────────────────────────────────────╯
-                                   FUNC  , TD_SPCUN,   LOWER,      LTAB ,  KC_ENT
+                                 FUNC  ,TD(TD_SPCUN),LOWER,      LTAB ,  KC_ENT
   //                            ╰───────────────────────────╯   ╰──────────────────╯
   ),
 
