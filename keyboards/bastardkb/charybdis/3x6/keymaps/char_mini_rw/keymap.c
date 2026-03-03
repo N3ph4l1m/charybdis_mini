@@ -29,9 +29,6 @@ enum {
     TD_PAREN,
     TD_CBRKT,
     TD_SBRKT,
-    TD_SPUND,
-    TD_UNDSH,
-    TD_QUOT,
 };
 
 // Tap dance definitions
@@ -39,9 +36,6 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_PAREN] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN),
     [TD_CBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
     [TD_SBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
-    [TD_SPUND] = ACTION_TAP_DANCE_DOUBLE(KC_SPC, KC_UNDS),
-    [TD_UNDSH] = ACTION_TAP_DANCE_DOUBLE(S(KC_MINS), KC_MINS),
-    [TD_QUOT] = ACTION_TAP_DANCE_DOUBLE(KS(KC_2),KC_QUOT),
 };
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
@@ -93,7 +87,7 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
   // ├──────────────────────────────────────────────────────┤   ├──────────────────────────────────────────────────────┤
        KC_LSFT,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, MT(KC_LSFT,KC_CAPS),
   // ╰──────────────────────────────────────────────────────┤   ├──────────────────────────────────────────────────────╯
-                                   FUNC  , TD(TD_SPUND) ,   LOWER,      LTAB ,  KC_ENT
+                                   FUNC  ,  KC_SPC,   LOWER,      LTAB ,  KC_ENT
   //                            ╰───────────────────────────╯   ╰──────────────────╯
   ),
 
@@ -102,7 +96,7 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
        KC_GRV,  XXXXXXX, KC_MNXT, KC_MPLY, KC_MPRV, XXXXXXX,    KC_LBRC,    KC_7,    KC_8,    KC_9, KC_0   , KC_RBRC,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX,    KC_PPLS,    KC_4,    KC_5,    KC_6, KC_PMNS, KC_EQL,
-  // ─┤ ├──────────────────────────────────────────────────────┤
+  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_NUHS, XXXXXXX,    KC_PAST,    KC_1,    KC_2,    KC_3, KC_PSLS,S(KC_MINS),
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   XXXXXXX, XXXXXXX, _______,    XXXXXXX, _______
@@ -114,9 +108,9 @@ MT(MOD_LCTL,KC_TAB), LSFT_KA, LCTL_KS, LALT_KD, LGUI_KF, KC_G,    KC_H, RGUI_KJ,
   // ╭────────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        KC_GRV, UK_EURO, KC_DLR ,KC_PAST,S(KC_6) ,TD(TD_PAREN),    KC_HOME, KC_PGUP, KC_PGDN, KC_END , XXXXXXX,KC_DEL,
   // ├─────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-    S(KC_MINS), UK_PND,UK_PERC,S(KC_NUHS), TD(TD_QUOT), TD(TD_CBRKT),  KC_LEFT,   KC_DOWN, KC_UP, KC_RGHT, XXXXXXX,  XXXXXXX,
+    S(KC_MINS), UK_PND,UK_PERC,S(KC_NUHS), XXXXXXX, TD(TD_CBRKT),  KC_LEFT,   KC_DOWN, KC_UP, KC_RGHT, XXXXXXX,  XXXXXXX,
   // ├─────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-      XXXXXXX, KC_NUBS, S(KC_NUBS), KC_NUHS,TD(TD_UNDSH),TD(TD_SBRKT), XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, KC_NUBS, S(KC_NUBS), KC_NUHS,XXXXXXX,TD(TD_SBRKT), XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ╰─────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   _______, _______, XXXXXXX,       _______, XXXXXXX
   //                            ╰──────────────────────────────╯ ╰──────────────────╯
