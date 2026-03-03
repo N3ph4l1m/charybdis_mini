@@ -34,14 +34,21 @@ enum {
     TD_QUOT,
 };
 
+void dance_quot_finished(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        tap_code16(S(KC_2));    // Double Quote (UK)
+    } else {
+        tap_code(KC_QUOT);      // Single Quote
+    }
+}
 // Tap dance definitions
 tap_dance_action_t tap_dance_actions[] = {
     [TD_PAREN] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN),
     [TD_CBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
     [TD_SBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
     [TD_SPUND] = ACTION_TAP_DANCE_DOUBLE(KC_SPC, KC_UNDS),
-    [TD_UNDSH] = ACTION_TAP_DANCE_DOUBLE(S(KC_MINS), KC_MINS),
-    [TD_QUOT] = ACTION_TAP_DANCE_DOUBLE(KS(KC_2),KC_QUOT),
+    [TD_UNDSH] = ACTION_TAP_DANCE_DOUBLE(KC_UNDS, KC_MINS),
+    [TD_QUOT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL,dance_quot_finished,NULL)
 };
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
