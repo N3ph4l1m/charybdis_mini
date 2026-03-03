@@ -38,6 +38,10 @@ void dance_quot_finished(qk_tap_dance_state_t *state, void *user_data) {
         tap_code(KC_QUOT);      // Single Quote
     }
 }
+
+void dance_quot_reset(qk_tap_dance_state_t *state, void *user_data) {
+}
+
 // Tap dance definitions
 tap_dance_action_t tap_dance_actions[] = {
     [TD_PAREN] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN),
@@ -45,7 +49,7 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_SBRKT] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
     [TD_SPUND] = ACTION_TAP_DANCE_DOUBLE(KC_SPC, KC_UNDS),
     [TD_UNDSH] = ACTION_TAP_DANCE_DOUBLE(KC_UNDS, KC_MINS),
-    [TD_QUOT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL,dance_quot_finished,NULL)
+    [TD_QUOT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL,dance_quot_finished,dance_quot_reset)
 };
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
